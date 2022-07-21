@@ -83,50 +83,24 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'lib/assets/whatsapp_white_outlined.png',
-              scale: 5,
-            ),
-            AuthForm(
-              _submitAuthForm,
-              _isLoading,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Text(
-              'from',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Row(
+      //resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(),
+          child: Center(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'lib/assets/meta.png',
-                  scale: 8,
+                SizedBox(
+                  height: 150,
                 ),
-                Text(
-                  'Meta',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 60,
-                    fontFamily: 'Dongle',
-                  ),
+                AuthForm(
+                  _submitAuthForm,
+                  _isLoading,
                 ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );

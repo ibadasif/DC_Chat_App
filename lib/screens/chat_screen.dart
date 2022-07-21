@@ -15,36 +15,37 @@ class ChatScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Icon(Icons.video_call),
+              // Icon(Icons.video_call),
               SizedBox(
                 width: 30,
               ),
-              Icon(Icons.call),
-              DropdownButton(
-                items: [
-                  DropdownMenuItem(
-                    child: Container(
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.exit_to_app,
-                          ),
-                          //SizedBox(width: 4),
-                          Text('Logout'),
-                        ],
+              DropdownButtonHideUnderline(
+                child: DropdownButton(
+                  items: [
+                    DropdownMenuItem(
+                      child: Container(
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.exit_to_app,
+                            ),
+                            //SizedBox(width: 4),
+                            Text('Logout'),
+                          ],
+                        ),
                       ),
+                      value: 'logout',
                     ),
-                    value: 'logout',
+                  ],
+                  onChanged: (itemIdentifier) {
+                    if (itemIdentifier == 'logout') {
+                      FirebaseAuth.instance.signOut();
+                    }
+                  },
+                  icon: Icon(
+                    Icons.more_vert,
+                    color: Theme.of(context).primaryIconTheme.color,
                   ),
-                ],
-                onChanged: (itemIdentifier) {
-                  if (itemIdentifier == 'logout') {
-                    FirebaseAuth.instance.signOut();
-                  }
-                },
-                icon: Icon(
-                  Icons.more_vert,
-                  color: Theme.of(context).primaryIconTheme.color,
                 ),
               ),
             ],

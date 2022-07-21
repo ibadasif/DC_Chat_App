@@ -32,6 +32,7 @@ dependencies:
   firebase_auth: ^0.16.1
   image_picker: ^0.6.5+3
   firebase_storage: ^3.1.5
+  animated_splash_screen: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +55,9 @@ flutter:
     - lib/assets/Whastaap_image.jpg
     - lib/assets/whatsapp_white_outlined.png
     - lib/assets/meta.png
+    - lib/assets/whatsapp_green_outlined.png
+    - lib/assets/meta_green_outlined.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
